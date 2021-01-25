@@ -1,3 +1,13 @@
 <h1>Hello Angular World!</h1>
-<input type="text" [(ngModel)]="title">
-<p>{{title}}</p>
+
+<button (click)="backgroundToggle = !backgroundToggle">Toggle</button>
+<div [ngStyle]="{
+width: '200px',
+height: '200px',
+borderRadius: '2px',
+border: '1px solid #ccc',
+background: backgroundToggle ? 'red' : 'blue',
+color: backgroundToggle ? 'black':'white'
+}">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur beatae delectus doloribus ipsam laborum nesciunt nobis, officia possimus quas quibusdam quis, repellendus, repudiandae sed tempore ut veniam veritatis voluptate! Eos.
+</div>
