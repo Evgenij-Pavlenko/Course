@@ -1,9 +1,18 @@
 <h1>Hello Angular World!</h1>
 
-<button (click)="toggle = !toggle">Toggle</button>
+<!--<ul>-->
+<!--  <li *ngFor="let num of arr; let id = index">-->
+<!--    Index: {{id + 1}} - <strong>{{num}}</strong></li>-->
+<!--</ul>-->
 
-<div [ngSwitch]="toggle">
-  <p *ngSwitchCase="true" class="red">Lorem ipsum.</p>
-  <p *ngSwitchCase="false" class="blue">Lorem ipsum. Lorem ipsum.</p>
-  <p *ngSwitchDefault>Lorem ipsum dolor.</p>
-</div>
+<ul>
+  <li *ngFor="let post of obj">
+    <p>{{post.title}} <b>{{post.author}}</b></p>
+    <ul>
+      <li *ngFor="let comment of post.coments">
+        <small>{{comment.name}}</small>
+        <p>{{comment.text}}</p>
+      </li>
+    </ul>
+  </li>
+</ul>
