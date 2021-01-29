@@ -6,6 +6,12 @@ export interface Post {
   id?: number;
 }
 
+export interface News {
+  id?: number;
+  title: string;
+  text: string;
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -17,4 +23,8 @@ export class AppComponent {
     {title: 'Title 2', text: 'text 2 fgfgfvfvfvfvfvvfv', id: 2}
   ];
 
+  updatePosts(post: Post) {
+    this.posts.unshift(post);
+    // console.log('New post', post);
+  }
 }
