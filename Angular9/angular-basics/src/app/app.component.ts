@@ -27,6 +27,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     setTimeout(() => {
       console.log('Timeout');
+      // при   changeDetection: ChangeDetectionStrategy.OnPush - изменения отслеживаются, когда меняется весь объект @Input() post: Post;
       this.posts[0] = {
         title: 'Changed!',
         text: 'changed 2',
