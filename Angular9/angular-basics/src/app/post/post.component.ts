@@ -1,4 +1,4 @@
-import {Component, ContentChild, ElementRef, Input, OnInit} from '@angular/core';
+import {Component, ContentChild, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {Post} from '../app.component';
 
 @Component({
@@ -6,16 +6,27 @@ import {Post} from '../app.component';
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.scss']
 })
-export class PostComponent implements OnInit {
+export class PostComponent implements OnInit, OnChanges {
 
   @Input() post: Post;
+  @Output() onRemove = new  EventEmitter<number>();
   @ContentChild('info', {static: true}) infoRef: ElementRef;
 
   constructor() {
+    console.log('Constructor');
   }
 
-  ngOnInit(): void {
-    console.log(this.infoRef.nativeElement);
+  removePost(){
+    this.onRemove.emit(this.post.id);
   }
+  ngOnInit(): void {
+    console.log('ngOnInit');
+    // console.log(this.infoRef.nativeElement);
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('ngOnChanges', changes);
+  }
+
 
 }
