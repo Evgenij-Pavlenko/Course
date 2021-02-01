@@ -20,20 +20,20 @@ export interface News {
 export class AppComponent implements OnInit {
 
   posts: Post[] = [
-    {title: 'Title 1', text: 'text 1 fgfgfvfvfvfvfvvfv', id: 1}
-    // {title: 'Title 2', text: 'text 2 fgfgfvfvfvfvfvvfv', id: 2}
+    {title: 'Title 1', text: 'text 1 fgfgfvfvfvfvfvvfv', id: 1},
+    {title: 'Title 2', text: 'text 2 fgfgfvfvfvfvfvvfv', id: 2}
   ];
 
   ngOnInit(): void {
-    setTimeout(() => {
-      console.log('Timeout');
-      // при   changeDetection: ChangeDetectionStrategy.OnPush - изменения отслеживаются, когда меняется весь объект @Input() post: Post;
-      this.posts[0] = {
-        title: 'Changed!',
-        text: 'changed 2',
-        id: 1
-      };
-    }, 4000);
+    // setTimeout(() => {
+    //   console.log('Timeout');
+    //   // при   changeDetection: ChangeDetectionStrategy.OnPush - изменения отслеживаются, когда меняется весь объект @Input() post: Post;
+    //   this.posts[0] = {
+    //     title: 'Changed!',
+    //     text: 'changed 2',
+    //     id: 1
+    //   };
+    // }, 4000);
   }
 
   updatePosts(post: Post) {
