@@ -1,5 +1,12 @@
 <div class="container">
   <h1>Angular Components</h1>
+<!--[appStyle]="'red'" fontWidght="bold" - равнозначны (без бандинга - только строки передаются)-->
+<!--  <p [appStyle]="'red'" fontWeight="bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, minus.</p>-->
 
-  <p appStyle>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, minus.</p>
+  <p [appStyle]="'red'" [dStyles]="{border: '1px solid blue', borderRadius: '5px'}">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, minus.
+  </p>
+  <p [appStyle]="'blue'" [dStyles]="{border: '1px solid red', borderRadius: '5px'}">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, minus.
+  </p>
 </div>
