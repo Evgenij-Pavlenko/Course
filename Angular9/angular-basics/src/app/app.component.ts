@@ -6,12 +6,6 @@ export interface Post {
   id?: number;
 }
 
-export interface News {
-  id?: number;
-  title: string;
-  text: string;
-}
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
