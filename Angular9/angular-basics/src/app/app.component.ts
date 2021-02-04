@@ -1,5 +1,10 @@
 import {Component} from '@angular/core';
 
+export interface Post {
+  title: string;
+  text: string;
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,22 +12,14 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
 
-  e: number = Math.E;
+  posts: Post[] = [
+    {title: 'Title1', text: 'Text1'},
+    {title: 'Title2', text: 'Text2'},
+    {title: 'Titlez3', text: 'Text3'},
+    {title: 'Заголовок', text: 'Text3'}
+  ];
 
-  str = 'hello world';
+  search = '';
+  searchField = 'title';
 
-  date: Date = new Date();
-  numb = 5;
-  float = 0.42;
-
-  obj = {
-    a: 1,
-    b: {
-      c: 2,
-      d: {
-        e: 3,
-        f: 4
-      }
-    }
-  };
 }
