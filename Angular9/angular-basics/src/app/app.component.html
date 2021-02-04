@@ -1,48 +1,8 @@
 <div class="container">
-  <h1>Angular Components</h1>
-  <!--[appStyle]="'red'" fontWidght="bold" - равнозначны (без бандинга - только строки передаются)-->
-  <!--  <p [appStyle]="'red'" fontWeight="bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, minus.</p>-->
+  <h1>Angular Pipes</h1>
+<p>{{ 10 | mult}}</p>
+<p>{{ 10 | mult: 2}}</p>
+<p>{{'hello world    '| exMarks}}</p>
 
-  <p [appStyle]="'red'" [dStyles]="{border: '1px solid blue', borderRadius: '5px'}">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, minus.
-  </p>
-  <p [appStyle]="'blue'" [dStyles]="{border: '1px solid red', borderRadius: '5px'}">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, minus.
-  </p>
-
-  <button class="btn" (click)="isVisible = !isVisible">Toggle</button>
-
-  <!--  <div *ngIf="isVisible" class="wrap">-->
-  <!--    <p>-->
-  <!--      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aspernatur beatae, commodi cupiditate laboriosam-->
-  <!--      natus nesciunt quae quidem ratione vero.-->
-  <!--    </p>-->
-  <!--  </div>-->
-<!--  или так : -->
-<!--  <ng-template [ngIf]="isVisible">-->
-<!--    <div class="wrap">-->
-<!--      <p>-->
-<!--        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aspernatur beatae, commodi cupiditate laboriosam-->
-<!--        natus nesciunt quae quidem ratione vero.-->
-<!--      </p>-->
-<!--    </div>-->
-<!--  </ng-template>-->
-
-
-
-<!--  <div class="wrap" *appIfnot="!isVisible">-->
-<!--    <p>-->
-<!--      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aspernatur beatae, commodi cupiditate laboriosam-->
-<!--      natus nesciunt quae quidem ratione vero.-->
-<!--    </p>-->
-<!--  </div>-->
-  <!--  или так : -->
-  <ng-template [appIfnot]="!isVisible">
-    <div class="wrap" >
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aspernatur beatae, commodi cupiditate laboriosam
-        natus nesciunt quae quidem ratione vero.
-      </p>
-    </div>
-  </ng-template>
 </div>
+

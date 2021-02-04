@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,23 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  isVisible = true;
+
+  e: number = Math.E;
+
+  str = 'hello world';
+
+  date: Date = new Date();
+  numb = 5;
+  float = 0.42;
+
+  obj = {
+    a: 1,
+    b: {
+      c: 2,
+      d: {
+        e: 3,
+        f: 4
+      }
+    }
+  };
 }
