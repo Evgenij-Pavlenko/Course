@@ -1,15 +1,10 @@
 <div class="container">
   <h1>Angular Pipes</h1>
 
-  <button class="btn" (click)="searchField = 'title'">Title</button>
-  <button class="btn" (click)="searchField = 'text'">Text</button>
+<p>Wait for it... {{promise | async}}</p>
 
-  <input type="text" [(ngModel)]="search">
- <div *ngFor="let post of posts | filter: search: searchField"
-   class="card">
-   <h2>{{post.title}}</h2>
-   <p>{{post.text}}</p>
- </div>
-
+  <p>Date: {{date | json}}</p>
+<!--  <p>Date2: {{date$ | async | date: 'ss'}}</p>-->
+  <p>{{date | date: 'long'}}</p>
 </div>
 
