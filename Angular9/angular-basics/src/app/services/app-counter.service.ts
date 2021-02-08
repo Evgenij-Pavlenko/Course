@@ -1,16 +1,24 @@
 import {Injectable} from '@angular/core';
+import {LogService} from './log.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AppCounterService {
   counter = 0;
+  logService: LogService;
 
-  increase(){
+  constructor(logService: LogService) {
+    this.logService = logService;
+  }
+
+  increase() {
+    this.logService.log('increase counter...');
     this.counter++;
   }
 
-  decrease(){
+  decrease() {
+    this.logService.log('decrease counter...');
     this.counter--;
   }
 }
