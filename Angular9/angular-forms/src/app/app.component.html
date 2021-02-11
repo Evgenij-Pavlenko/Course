@@ -1,16 +1,16 @@
 <div class="container">
-  <form class="card">
+  <form class="card" [formGroup]="form" (ngSubmit)="submit()">
     <h1>Angular Forms</h1>
 
     <div class="form-control">
       <label>Email</label>
-      <input type="text" placeholder="Email">
+      <input type="text" placeholder="Email" formControlName="email">
       <div class="validation"></div>
     </div>
 
     <div class="form-control">
       <label>Пароль</label>
-      <input type="password" placeholder="Пароль">
+      <input type="password" placeholder="Пароль" formControlName="password">
       <div class="validation"></div>
     </div>
 
@@ -31,7 +31,7 @@
         <input type="text">
       </div>
 
-      <button class="btn">Выбрать столицу</button>
+      <button class="btn" type="button">Выбрать столицу</button>
     </div>
 
     <div class="card">
@@ -43,7 +43,7 @@
       </div>
     </div>
 
-    <button class="btn">Отправить</button>
+    <button class="btn" type="submit" [disabled]="form.invalid">Отправить</button>
 
   </form>
 </div>
