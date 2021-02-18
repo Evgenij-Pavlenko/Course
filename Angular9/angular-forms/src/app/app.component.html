@@ -5,7 +5,7 @@
         <div class="form-control">
             <label>Email</label>
             <input type="text" placeholder="Email" formControlName="email">
-            <!--            <pre>{{form.get('email').errors | json}}</pre>-->
+                        <pre>{{form.get('email').errors | json}}</pre>
             <div
                     *ngIf="form.get('email').invalid && form.get('email').touched"
                     class="validation">
@@ -15,6 +15,10 @@
 
                 <small *ngIf="form.get('email').errors.email">
                     Enter correct email
+                </small>
+
+                <small *ngIf="form.get('email').errors.restrictedEmail">
+                    Email {{form.get('email').value}} ist verboten
                 </small>
             </div>
         </div>
