@@ -5,7 +5,7 @@
         <div class="form-control">
             <label>Email</label>
             <input type="text" placeholder="Email" formControlName="email">
-<!--            <pre>{{form.get('email').errors | json}}</pre>-->
+            <!--            <pre>{{form.get('email').errors | json}}</pre>-->
             <div
                     *ngIf="form.get('email').invalid && form.get('email').touched"
                     class="validation">
@@ -22,10 +22,10 @@
         <div class="form-control">
             <label>Пароль</label>
             <input type="password" placeholder="Пароль" formControlName="password">
-<!--            <pre>{{form.get('password').errors | json}}</pre>-->
+            <!--            <pre>{{form.get('password').errors | json}}</pre>-->
             <div *ngIf="form.get('password').invalid && form.get('password').touched"
-                    class="validation">
-                <small *ngIf="form.get('password').errors.required" >
+                 class="validation">
+                <small *ngIf="form.get('password').errors.required">
                     Field email cannot be empty
                 </small>
 
@@ -56,12 +56,14 @@
             <button class="btn" type="button" (click)="setCapital()">Выбрать столицу</button>
         </div>
 
-        <div class="card">
+        <div class="card" formGroupName="skills">
             <h2>Ваши навыки</h2>
-            <button class="btn">Добавить умение</button>
-            <div class="form-control">
-                <label></label>
-                <input type="text">
+            <button class="btn" (click)="addSkill()">Добавить умение</button>
+            <div class="form-control"
+                 *ngFor="let control of form.get('skills').controls let idx = index"
+            >
+                <label>Skill {{idx + 1 }}</label>
+                <input type="text" [formControlName]="idx">
             </div>
         </div>
 
