@@ -20,6 +20,10 @@
                 <small *ngIf="form.get('email').errors.restrictedEmail">
                     Email {{form.get('email').value}} ist verboten
                 </small>
+
+                <small *ngIf="form.get('email').errors.uniqEmail">
+                    Email {{form.get('email').value}} ist besetzt
+                </small>
             </div>
         </div>
 
