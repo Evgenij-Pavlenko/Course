@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -34,11 +35,19 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        spiner = findViewById(R.id.spinner);
-        spiner.setOnItemSelectedListener(this);
+
         count = findViewById(R.id.tv_count);
         priceTextView = findViewById(R.id.price);
 
+        createSpinner();
+
+        createMap();
+
+    }
+
+    void createSpinner() {
+        spiner = findViewById(R.id.spinner);
+        spiner.setOnItemSelectedListener(this);
         spinnerArrayList = new ArrayList<String>();
 
         spinnerArrayList.add("guitar");
@@ -54,15 +63,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 //                R.array.planets_array,
 //                android.R.layout.simple_spinner_item
 //        );
-
         spinerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spiner.setAdapter(spinerAdapter);
+    }
+    void createMap(){
         goodsMap = new HashMap<String, Double>();
         goodsMap.put("guitar", 500.00);
         goodsMap.put("drums", 1500.00);
         goodsMap.put("keyboard", 1000.00);
-
-
     }
 
     public void setHelloJavaText(View view) {
@@ -82,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         quantity = Integer.parseInt(String.valueOf(count.getText()));
         quantity++;
         count.setText("" + quantity);
-        priceTextView.setText("" + price*quantity );
+        priceTextView.setText("" + price * quantity);
     }
 
     public void minusCount(View view) {
@@ -91,7 +99,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             quantity--;
             count.setText("" + quantity);
         }
-        priceTextView.setText("" + price*quantity );
+        priceTextView.setText("" + price * quantity);
 
     }
 
@@ -100,7 +108,25 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         goodsName = spiner.getSelectedItem().toString();
         price = (double) goodsMap.get(goodsName);
 
-        priceTextView.setText("" + price*quantity );
+        priceTextView.setText("" + price * quantity);
+
+        ImageView goodsIV = findViewById(R.id.iv_goods);
+
+        switch (goodsName) {
+            case "guitar":
+                goodsIV.setImageResource(R.drawable.baseline_music_note_24);
+                break;
+            case "drums":
+                goodsIV.setImageResource(R.drawable.baseline_music_off_24);
+                break;
+            case "keyboard":
+                goodsIV.setImageResource(R.drawable.baseline_music_video_24);
+                break;
+            default:
+                goodsIV.setImageResource(R.drawable.baseline_do_not_disturb_alt_24);
+                break;
+
+        }
     }
 
     @Override
