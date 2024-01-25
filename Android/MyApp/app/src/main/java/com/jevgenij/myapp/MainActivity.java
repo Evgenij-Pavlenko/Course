@@ -142,6 +142,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         order.goodsName = goodsName;
         order.quantity = quantity;
 
-        Log.d("printUserName", order.userName);
+//        Log.d("userName", order.userName);
+//        Log.d("orderPrice", "" + order.orderPrice);
+//        Log.d("goodsName", order.goodsName);
+//        Log.d("quantity", "" + order.quantity);
     }
 }
