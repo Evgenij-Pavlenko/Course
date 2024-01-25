@@ -5,6 +5,7 @@ import androidx.core.content.ContextCompat;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -132,5 +133,15 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
+    }
+
+    public void addToCard(View view) {
+        Order order = new Order();
+        order.userName = "John";
+        order.orderPrice = price;
+        order.goodsName = goodsName;
+        order.quantity = quantity;
+
+        Log.d("printUserName", order.userName);
     }
 }
