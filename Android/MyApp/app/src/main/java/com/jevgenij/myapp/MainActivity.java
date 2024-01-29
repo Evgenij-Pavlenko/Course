@@ -3,6 +3,7 @@ package com.jevgenij.myapp;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -67,7 +68,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         spinerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spiner.setAdapter(spinerAdapter);
     }
-    void createMap(){
+
+    void createMap() {
         goodsMap = new HashMap<String, Double>();
         goodsMap.put("guitar", 500.00);
         goodsMap.put("drums", 1500.00);
@@ -138,11 +140,19 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void addToCard(View view) {
         Order order = new Order();
         order.userName = "John";
-        order.orderPrice = price;
+
         order.goodsName = goodsName;
         order.quantity = quantity;
+        order.orderPrice = price * quantity;
 
-//        Log.d("userName", order.userName);
+        Intent orderIntent = new Intent(MainActivity.this, OrderActivity.class);
+        orderIntent.putExtra("userName", order.userName);
+        orderIntent.putExtra("orderPrice", order.orderPrice);
+        orderIntent.putExtra("goodsName", order.goodsName);
+        orderIntent.putExtra("quantity", order.quantity);
+
+        startActivity(orderIntent);
+        Log.d("userName", order.userName);
 //        Log.d("orderPrice", "" + order.orderPrice);
 //        Log.d("goodsName", order.goodsName);
 //        Log.d("quantity", "" + order.quantity);
