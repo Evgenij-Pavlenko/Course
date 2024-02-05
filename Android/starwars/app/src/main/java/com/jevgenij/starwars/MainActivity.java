@@ -14,6 +14,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ImageView iv_anakin = findViewById(R.id.iv_anakin);
+        iv_anakin.setScaleX(0);
+        iv_anakin.setScaleY(0);
+
+        iv_anakin.animate().scaleX(1).scaleY(1).rotation(360).setDuration(2000);
     }
 
     public void eraseImage(View view) {
