@@ -28,13 +28,17 @@ public class MainActivity extends AppCompatActivity {
         ImageView iv_dartWader = findViewById(R.id.iv_dartWader);
 
         if(isAnakinVisible){
-            iv_dartWader.animate().alpha(1).setDuration(2000);
-            iv_anakin.animate().alpha(0).setDuration(2000);
+            iv_dartWader.animate().alpha(1).rotation(iv_dartWader.getRotation() + 3600)
+                    .scaleY(1).scaleX(1).setDuration(2000);
+            iv_anakin.animate().alpha(0).scaleY(0).scaleX(0)
+                    .rotation(iv_anakin.getRotation() + 3600).setDuration(2000);
             isAnakinVisible = false;
 
         }else{
-            iv_dartWader.animate().alpha(0).setDuration(2000);
-            iv_anakin.animate().alpha(1).setDuration(2000);
+            iv_dartWader.animate().alpha(0).rotation(iv_dartWader.getRotation() + 3600)
+                    .scaleY(0).scaleX(0).setDuration(2000);
+            iv_anakin.animate().alpha(1).rotation(iv_anakin.getRotation() + 3600)
+                    .scaleY(1).scaleX(1).setDuration(2000);
             isAnakinVisible = true;
         }
     }
